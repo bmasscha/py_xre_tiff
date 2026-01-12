@@ -22,6 +22,34 @@ XRE TIFF is a TIFF format variant that stores 16-bit unsigned integer image data
 pip install numpy pillow matplotlib
 ```
 
+## Quick Start
+
+```python
+from py_xre_tiff import read_xre_tif, write_xre_tif
+
+# Read a file
+data = read_xre_tif('image.tif', rescale=True)
+
+# Write a file
+write_xre_tif('output.tif', data, rescale=True, slope=0.001, offset=100.0)
+```
+
+## Examples
+
+See [`examples.py`](examples.py) for comprehensive usage examples including:
+
+- Reading and displaying images
+- Extracting metadata
+- Automatic rescaling
+- Writing with custom slope/offset
+- Round-trip verification
+
+Run examples:
+
+```bash
+python examples.py
+```
+
 ### Usage
 
 ```python
