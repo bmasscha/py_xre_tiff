@@ -16,11 +16,28 @@ XRE TIFF is a TIFF format variant that stores 16-bit unsigned integer image data
 
 ## Installation
 
-### Requirements
+### From Source
 
 ```bash
-pip install numpy pillow matplotlib
+git clone https://github.com/bmasscha/py_xre_tiff.git
+cd py_xre_tiff
+pip install -r requirements.txt
 ```
+
+### As a Package
+
+```bash
+git clone https://github.com/bmasscha/py_xre_tiff.git
+cd py_xre_tiff
+pip install .
+```
+
+### Requirements
+
+- Python >= 3.7
+- numpy >= 1.20.0
+- Pillow >= 8.0.0
+- matplotlib >= 3.3.0 (for visualization examples)
 
 ## Quick Start
 
