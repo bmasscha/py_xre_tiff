@@ -1,0 +1,25 @@
+# Project xre tiff read and write
+
+## Information
+This project is a python library to read and write xre tiff images.
+The xre tiff images are normal tiff files but the format is simple.
+The description tag can contain the image slope and offset.
+In the example folder, there are tiff files for you to test on
+The data is always saved after a eight bytes. These first bytes contain the size of the image if I am correct.
+That means that in principle you can just read the data immediatly after you have read the size. 
+The data format is mostly sixteen bit little endian. Maybe that is also specified in the first 8 bits. 
+
+## The functions
+### Read tiff
+A first function to be created is read_xre_tif(path, data, rescale=False). 
+The rescale is there if we want to apply the conversion from the U16 data to float data based on the slope and the offset in the description tag. 
+
+### Write tiff
+The second function is write_xre_tif(path, data, rescale=False, slope=1.0, offset=0.0)
+Of course this function is used to save data in the xre format. Again the same eight bytes header and then the data. In the description tag we write
+slope = 1.000000E+00 offset = 0.000000E+01
+If rescale is True we have to rescale the float input data according to the specified slope and offset values. Convert to U16 and save the tiff file and the tags.
+If the rescale is False, we convert the float data into U16 without using the slope and offset but the slope and offset values are written in the description tag.
+All tags are written after the data. 
+
+
