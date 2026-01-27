@@ -15,7 +15,7 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/bmasscha/py_xre_tiff",
-    packages=["py_xre_tiff"],
+    py_modules=["py_xre_tiff"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
